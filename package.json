@@ -1,0 +1,30 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot",
+  "main": "dist/index.js",
+  "repository": "git@github.com:Aliu2211/discord-bot.git",
+  "author": "Aliu Tijani <aliutijani21@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "@types/jimp": "^0.2.1",
+    "@types/node": "^22.14.1",
+    "discord-reply": "^0.1.2",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.5.0",
+    "jimp": "^1.6.0",
+    "node-fetch": "^2.7.0",
+    "tesseract.js": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^10.0.0"
+  }
+}
