@@ -42,6 +42,8 @@ export async function extractTextFromImage(imageUrl: string, lang: string = 'eng
     try {
       const result = await Tesseract.recognize(tempFile, lang, { logger: m => console.log(m) });
       text = result.data.text || 'No text found in image.';
+      // Format the extracted text for readability
+      text = formatExtractedText(text);
     } catch (error) {
       console.error('OCR error:', error);
       text = 'Failed to process image.';
@@ -54,4 +56,21 @@ export async function extractTextFromImage(imageUrl: string, lang: string = 'eng
     console.error('OCR error:', error);
     return 'Failed to process image.';
   }
+}
+
+// Helper to format extracted text for readability with Markdown
+function formatExtractedText(text: string): string {
+  // Remove excessive whitespace, normalize line breaks, trim lines
+  const lines = text
+    .split('\n')
+    .map(line => line.trim())
+    .filter(line => line.length > 0);
+
+  // If the text is short, return as a code block for clarity
+  if (lines.length <= 10) {
+    return '```\n' + lines.join('\n') + '\n```';
+  }
+
+  // For longer text, use bullet points for each line
+  return lines.map(line => `• ${line}`).join('\n');
 }
