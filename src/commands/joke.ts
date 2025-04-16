@@ -1,5 +1,5 @@
 import { SlashCommandBuilder, ChatInputCommandInteraction, Client } from 'discord.js';
-
+// sample jokes 
 const jokes = [
   'Why did the scarecrow win an award? Because he was outstanding in his field!',
   'Why don’t skeletons fight each other? They don’t have the guts.',
