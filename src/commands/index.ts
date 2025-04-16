@@ -9,7 +9,7 @@ import { settingsCommand } from './settings';
 
 export const commands = [helpCommand, pingCommand, ocrCommand, jokeCommand, reminderCommand, pollCommand, settingsCommand];
 
-// register slash commands
+// Registing slash commands
 
 export async function registerSlashCommands(clientId: string, token: string) {
   const rest = new REST({ version: '10' }).setToken(token);
@@ -17,7 +17,7 @@ export async function registerSlashCommands(clientId: string, token: string) {
   await rest.put(Routes.applicationCommands(clientId), { body: slashCommands });
 }
 
-
+// Handling slash commands
 export async function handleSlashCommand(interaction: ChatInputCommandInteraction, client: Client) {
   const command = commands.find(cmd => cmd.data.name === interaction.commandName);
   if (command) {
