@@ -1,6 +1,6 @@
 import { SlashCommandBuilder, ChatInputCommandInteraction, Client, AttachmentBuilder } from 'discord.js';
 import { extractTextFromImage } from '../ocr';
-
+// Extract text from image 
 export const ocrCommand = {
   data: new SlashCommandBuilder()
     .setName('ocr')
