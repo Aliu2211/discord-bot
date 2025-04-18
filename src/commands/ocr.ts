@@ -1,10 +1,11 @@
 import { SlashCommandBuilder, ChatInputCommandInteraction, Client, AttachmentBuilder } from 'discord.js';
 import { extractTextFromImage } from '../ocr';
-
+// Extract text from image 
 export const ocrCommand = {
   data: new SlashCommandBuilder()
     .setName('ocr')
     .setDescription('Extract text from an image')
+    // Using url 
     .addStringOption(option =>
       option.setName('url')
         .setDescription('Image URL to process (optional if uploading an attachment)')

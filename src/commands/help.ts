@@ -1,5 +1,6 @@
 import { SlashCommandBuilder, ChatInputCommandInteraction, Client } from 'discord.js';
 
+// list all available commands
 export const helpCommand = {
   data: new SlashCommandBuilder()
     .setName('help')
